@@ -18,7 +18,7 @@ const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'Query',
     fields: {
-      now: {
+      nowit: {
         type: GraphQLDateTime,
         // Resolve can take a javascript Date.
         resolve: (): Date => new Date()
@@ -54,7 +54,7 @@ const schema = new GraphQLSchema({
 
 const query = `
 query DateTimeTest($dateTime: DateTime) {
-  now
+  nowit
   unix
   instant
   timezone
