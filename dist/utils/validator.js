@@ -50,6 +50,7 @@ var leapYear = function leapYear(year) {
 // - Leap seconds cannot be known in advance.
 //
 var validateTime = exports.validateTime = function validateTime(time) {
+    // pattern updated for valid time
   var TIME_REGEX = /^([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])(\.\d{1,})?(([Z])|([+|-]([01][0-9]|2[0-3]):[0-5][0-9])|())$/;
   return TIME_REGEX.test(time);
 };
