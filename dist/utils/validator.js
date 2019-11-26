@@ -52,6 +52,7 @@ var leapYear = function leapYear(year) {
 var validateTime = exports.validateTime = function validateTime(time) {
     // pattern updated for valid time
   var TIME_REGEX = /^([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])(\.\d{1,})?(([Z])|([+|-]([01][0-9]|2[0-3]):[0-5][0-9])|())$/;
+  console.log('TESTT', TIME_REGEX.test(time))
   return TIME_REGEX.test(time);
 };
 
@@ -126,7 +127,7 @@ var validateDate = exports.validateDate = function validateDate(datestring) {
 // Where *s is a fraction of seconds with at least 1 digit.
 //
 var validateDateTime = exports.validateDateTime = function validateDateTime(dateTimeString) {
-  var RFC_3339_REGEX = /^(\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60))(\.\d{1,})?(([Z])|([+|-]([01][0-9]|2[0-3]):[0-5][0-9]))$/;
+  const RFC_3339_REGEX =/^(\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60))(\.\d{1,})?(([Z])|([+|-]([01][0-9]|2[0-3]):[0-5][0-9])|())$/
 
   // Validate the structure of the date-string
   if (!RFC_3339_REGEX.test(dateTimeString)) {
